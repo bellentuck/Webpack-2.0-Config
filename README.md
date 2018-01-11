@@ -21,7 +21,7 @@ webpack-dashboard
 # I.
 ## see: https://codeburst.io/easy-guide-for-webpack-2-0-from-scratch-fe508a3ce44e
 
-###(1)Init the project
+### (1)Init the project
 Command line:
 ```
 node -v
@@ -31,31 +31,31 @@ npm init -y
 touch index.hmtl webpack.config.js index.js README.md
 ```
 
-###(2) `index.html` boilerplate
+### (2) `index.html` boilerplate
 See `index.html` header; Atom `html` shortcut muy bien
 
-###(3)Install webpack
+### (3)Install webpack
 Command line:
 ```
 npm i --save-dev webpack@latest webpack-dev-server@latest
 ```
 "We are installing Webpack and Webpack development server. We need a HTTP client to serve our files, that’s why we’re installing the dev-server."
 
-###(4)Configs via `webpack.config.js`
+### (4)Configs via `webpack.config.js`
 - `req` is a fantastic keyword in Atom
 - re: `entry` & `output`: "Basic workflow goes like this: We write code, webpack reads it, compiles it, spits out a compiled version out for the browser."
 - export to the outside world via `exports` statemt
 
-###(5)`src` the webpack `output` file in `index.html`
+### (5)`src` the webpack `output` file in `index.html`
 "Every web file has at least one single .html file. This is where the browser starts working with us." Enclose webpack output in `<script>`s.
 
-###(6)Install webpack globally for manual testing
+### (6)Install webpack globally for manual testing
 Command line:
 ```
 npm i -g webpack@latest
 ```
 
-###(7)Run webpack!
+### (7)Run webpack!
 Command line:
 ```
 webpack
@@ -66,14 +66,14 @@ webpack
 # II.
 ## see: https://codeburst.io/simple-beginner-guide-for-webpack-2-0-from-scratch-part-ii-66beb5dbccc2
 
-###(1) Command-line watch webpack (`webpack --watch`, `npm run watch`)
+### (1) Command-line watch webpack (`webpack --watch`, `npm run watch`)
 Just command-line it: `webpack --watch`
 and/or:
 a) add to `package.json`:   `"scripts": {
     "watch": "webpack --watch",`
 b) Commande line: `npm run watch`
 
-###(2) Compile ES6 to ES5 via Babel
+### (2) Compile ES6 to ES5 via Babel
 Command line:
 ```
 npm install --save-dev babel-loader babel-core
@@ -82,17 +82,16 @@ npm install --save-dev babel-loader babel-core
 Add first loader rule to `webpack.config.js`. (Init `module`, `rules`; write test for `/\.js$/` files)
 Test via `index.js` (throw on some sugar)
 
-###(3) Install Babel presets
+### (3) Install Babel presets
 Command line:
 ```
 npm install --save-dev babel-preset-es2015
 ```
-
-###(3) Config `.babelrc`
+Config `.babelrc`:
 `{ "presets": ["es2015"] }`
 Test via `index.js` (e.g. write a class)
 
-###(4) Compile styles (SCSS -> CSS)
+### (4) Compile styles (SCSS -> CSS)
 Command line:
 ```
 npm i --save-dev sass-loader node-sass css-loader style-loader
@@ -105,7 +104,7 @@ Test out by creating and populating a new `styles.scss` file (e.g. change the `b
 # III.
 ## see: https://codeburst.io/simple-beginner-guide-for-webpack-2-0-from-scratch-part-iii-d374c021f9fc
 
-###(0) "Cleaning up time!"
+### (0) "Cleaning up time!"
 ```
 mkdir src
 mv index.js styles.scss
@@ -129,7 +128,7 @@ let config = {
 - "The `path` module provides utilities for working with file and directory paths" (Node.js docs)
 - Webpack needs an absolute path to work properly. We can accomplish this by using <a href=https://webpack.js.org/configuration/resolve/>`resolve`</a>
 
-###(1) Compile styles, cont'd. - `styles.scss` -> `styles.css` via `extract-text-webpack-plugin`
+### (1) Compile styles, cont'd. - `styles.scss` -> `styles.css` via `extract-text-webpack-plugin`
 Command line:
 ```
 npm install --save-dev extract-text-webpack-plugin
@@ -159,7 +158,7 @@ plugins: [
 
 `index.html`: add `<link rel="stylesheet" href="styles.css">` (webpack stylesheet output)
 
-###(2) Set up local development server
+### (2) Set up local development server
 Command line:
 ```
 npm install webpack-dev-server -g --save-dev
@@ -179,7 +178,7 @@ devServer: {
 devtool: 'eval-source-map' // enable devtool for better debugging experience
 ```
 
-###(3) Local dev server cont'd. - launch `webpack-dev-server` via NPM scripts
+### (3) Local dev server cont'd. - launch `webpack-dev-server` via NPM scripts
 Replace `watch` with `start` script in `package.json`:
 ```
 "start": "webpack-dev-server -d --hot --config webpack.config.js --watch",
@@ -196,7 +195,7 @@ WOW. The result here is very cool.
 ## see: https://codeburst.io/simple-beginner-guide-for-webpack-2-0-from-scratch-part-iv-102efc01ffad
 "We have all of the main functionality already — but we want more, we’re going to boost up our performance and make our build production ready."
 
-###(1) JS Minification - via `uglifyjs` webpack plugin
+### (1) JS Minification - via `uglifyjs` webpack plugin
 Command line:
 ```
 npm i uglifyjs-webpack-plugin --save-dev
@@ -223,7 +222,7 @@ cat public/output.js
 
 "It’s not very optimal to uglify each time after changes because of the added memory cost and compile time. We should only uglify on our production servers once we are going to push our code to live." (Lasn)
 
-###(2) Node environments - specify thy development phase
+### (2) Node environments - specify thy development phase
 `package.json`:
 ```
 "scripts": {
@@ -254,7 +253,7 @@ Then, remove `output.js` and `npm run production`
 
 Should get uglified code second but not first time.
 
-###(3) CSS Minification - via `optimize-css-assets-webpack-plugin`
+### (3) CSS Minification - via `optimize-css-assets-webpack-plugin`
 Command line:
 ```
 npm i optimize-css-assets-webpack-plugin --save-dev
@@ -278,7 +277,7 @@ if (process.env.NODE_ENV === 'production') {
 # V.
 ## see: https://codeburst.io/simple-beginner-guide-for-webpack-2-0-from-scratch-part-v-495dba627718
 
-###(0) Get organized
+### (0) Get organized
 (a) create `assets` folder w/in `src`
 `mkdir stylesheets, icons, images, fonts` within
 Move `styles.scss` into `stylesheets` folder and update pathname in `index.js`
@@ -286,7 +285,7 @@ Move `styles.scss` into `stylesheets` folder and update pathname in `index.js`
 (b) create `app` folder w/in `src`
 `touch App.jsx` in `app`
 
-###(1) Images via React - part 1 - configs (`webpack.config.js`)
+### (1) Images via React - part 1 - configs (`webpack.config.js`)
 Command line: (may take a moment)
 ```
 npm i image-webpack-loader file-loader --save-dev
@@ -329,7 +328,7 @@ within module.rules...
 },
 ```
 
-###(2) Images via React - part 2 - hook up Babel
+### (2) Images via React - part 2 - hook up Babel
 Command line:
 ```
 npm i react react-dom babel-preset-react --save-dev
@@ -340,7 +339,7 @@ npm i react react-dom babel-preset-react --save-dev
 ```
 
 
-###(3) Images via React - part 3 - boilerplate (`index.html`, `index.js`, `App.jsx`)
+### (3) Images via React - part 3 - boilerplate (`index.html`, `index.js`, `App.jsx`)
 `index.html`: put react boilerplate into <body>
 ```
 <body>
@@ -365,7 +364,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 "Pure stateless component" returning simple JSX
 ##### `App.jsx` -> `index.js` -> `index.html`
 
-###(4) Images via React - part 4 - optimizations
+### (4) Images via React - part 4 - optimizations
 - Supplement `App.jsx` to test image loading.
 
 - If get intimidating webpack error regarding img loading (to effect of "image not found"), try: `brew reinstall libpng` (https://github.com/tcoopman/image-webpack-loader/issues/60)
