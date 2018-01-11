@@ -1,6 +1,4 @@
-// This is the 'paragraph'
-// following 'use strict'
-// in output.js
+// This is the paragraph of code following `use strict` in output.js
 
 "use strict";
 /******************************************************************************/
@@ -52,20 +50,20 @@ function _classCallCheck(instance, Constructor) {
 /******** II. WHATEVER WAS IN THE INPUT (e.g., index.js) **********************/
 __webpack_require__(1); // require('./styles.scss');
 
-var Car = function () {  // class Car {
-  function Car() {
-    _classCallCheck(this, Car);
+var ConnectiveTissue = function () { // class ConnectiveTissue {
+  function ConnectiveTissue() {
+    _classCallCheck(this, ConnectiveTissue);
   }
-  _createClass(Car, [{
-    key: 'manufacturer',
-    value: function manufacturer(car) {   // manufacturer(car) {
-      document.write('I have a ' + car);  // document.write(`I have a ${car}`)
-    }                                     // }
+  _createClass(ConnectiveTissue, [{
+    key: 'ligament',
+    value: function ligament(bone1, bone2) {    // ligament(bone1, bone2) {
+      document.write('The ' + bone1 + ' is connected to the...' + bone2 + ' bone!');
+    }
   }]);
-  return Car;
-}();                     // }
-var bmw = new Car();        // const bmw = new Car;
-bmw.manufacturer('maserati');  // bmw.manufacturer('maserati');
+  return ConnectiveTissue;
+}();
+var mu = new ConnectiveTissue();    // const mu = new ConnectiveTissue;
+mu.ligament('arm', 'thigh');
 /******************************************************************************/
 /******************** III. CLASS CREATION ***************************************/
 //#sourceURL=[module]

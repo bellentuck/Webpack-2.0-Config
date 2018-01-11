@@ -8,20 +8,28 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // render our app component and mount it to our #root element
 
 
-// // Previously...
-// const dress = () => {
-//   document.write('I like your dress')
+
+
+
+
+
+
+// // Test cases
+//
+// const salsa = () => {
+//   document.write('Salsa, seltzer, Sosa, tzarist, zest.')
 // }
 //
-// dress();
-// class Car {
+// salsa();
 //
-//   manufacturer(car) {
-//     document.write(`I have a ${car}`)
+// class ConnectiveTissue {
+//
+//   ligament(bone1, bone2) {
+//     document.write(`The ${bone1} is connected to the...${bone2} bone!`)
 //   }
 //
 // }
 //
-// const bmw = new Car;
+// const mu = new ConnectiveTissue;
 //
-// bmw.manufacturer('maserati');
+// mu.ligament('arm', 'thigh');
