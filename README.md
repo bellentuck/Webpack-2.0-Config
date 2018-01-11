@@ -22,27 +22,33 @@ webpack-dashboard
 
 
 ### (1)Init the project
-Command line:
 ```
 node -v
+```
+```
 mkdir webpack-2.0-from-scratch
+```
+```
 cd webpack-2.0-from-scratch/
+```
+```
 npm init -y
+```
+```
 touch index.hmtl webpack.config.js index.js README.md
 ```
 
 ### (2) `index.html` boilerplate
-See `index.html` header; Atom `html` shortcut muy bien
+If you're using Atom the `html` shortcut is great
 
 ### (3)Install webpack
-Command line:
 ```
 npm i --save-dev webpack@latest webpack-dev-server@latest
 ```
 "We are installing Webpack and Webpack development server. We need a HTTP client to serve our files, that’s why we’re installing the dev-server."
 
 ### (4)Configs via `webpack.config.js`
-- `req` is a fantastic keyword in Atom
+- Atom: `req` shortcut for require statements
 - re: `entry` & `output`: "Basic workflow goes like this: We write code, webpack reads it, compiles it, spits out a compiled version out for the browser."
 - export to the outside world via `exports` statemt
 
@@ -50,13 +56,11 @@ npm i --save-dev webpack@latest webpack-dev-server@latest
 "Every web file has at least one single .html file. This is where the browser starts working with us." Enclose webpack output in `<script>`s.
 
 ### (6)Install webpack globally for manual testing
-Command line:
 ```
 npm i -g webpack@latest
 ```
 
 ### (7)Run webpack!
-Command line:
 ```
 webpack
 ```
@@ -73,7 +77,6 @@ a) add to `package.json`:   `"scripts": {
 b) Commande line: `npm run watch`
 
 ### (2) Compile ES6 to ES5 via Babel
-Command line:
 ```
 npm install --save-dev babel-loader babel-core
 ```
@@ -82,7 +85,6 @@ Add first loader rule to `webpack.config.js`. (Init `module`, `rules`; write tes
 Test via `index.js` (throw on some sugar)
 
 ### (3) Install Babel presets
-Command line:
 ```
 npm install --save-dev babel-preset-es2015
 ```
@@ -91,11 +93,10 @@ Config `.babelrc`:
 Test via `index.js` (e.g. write a class)
 
 ### (4) Compile styles (SCSS -> CSS)
-Command line:
 ```
 npm i --save-dev sass-loader node-sass css-loader style-loader
 ```
-Add new rule to `webpack.config.js` loader for `/\.scss$/` files.
+Then, add new rule to `webpack.config.js` loader for `/\.scss$/` files.
 
 Test out by creating and populating a new `styles.scss` file (e.g. change the `background-color` to a `$variable`), and requiring `styles.scss` in `index.js`.
 
@@ -127,7 +128,6 @@ let config = {
 - Webpack needs an absolute path to work properly. We can accomplish this by using <a href=https://webpack.js.org/configuration/resolve/>`resolve`</a>
 
 ### (1) Compile styles, cont'd. - `styles.scss` -> `styles.css` via `extract-text-webpack-plugin`
-Command line:
 ```
 npm install --save-dev extract-text-webpack-plugin
 ```
@@ -157,7 +157,6 @@ plugins: [
 `index.html`: add `<link rel="stylesheet" href="styles.css">` (webpack stylesheet output)
 
 ### (2) Set up local development server
-Command line:
 ```
 npm install webpack-dev-server -g --save-dev
 ```
@@ -193,7 +192,6 @@ WOW. The result here is very cool.
 "We have all of the main functionality already — but we want more, we’re going to boost up our performance and make our build production ready."
 
 ### (1) JS Minification - via `uglifyjs` webpack plugin
-Command line:
 ```
 npm i uglifyjs-webpack-plugin --save-dev
 ```
@@ -211,8 +209,14 @@ plugins: [
 Test via command line:
 ```
 rm -rf public/output.js
+```
+```
 ls
+```
+```
 webpack
+```
+```
 cat public/output.js
 ```
 "Uglify is a JavaScript file minifier. It compresses the file size by removing all the spaces and new lines- which makes the code unreadable able hence ugly. Uglify also joins sentences using comma, changes property access to dot notation (to reduce number of characters), removes dead code and removes console logs. it also simplifies conditional statements (if), Boolean operations, constants, function declarations etc." (Quora, "What does uglify mean?")
@@ -251,7 +255,6 @@ Then, remove `output.js` and `npm run production`
 Should get uglified code second but not first time.
 
 ### (3) CSS Minification - via `optimize-css-assets-webpack-plugin`
-Command line:
 ```
 npm i optimize-css-assets-webpack-plugin --save-dev
 ```
@@ -282,7 +285,6 @@ Move `styles.scss` into `stylesheets` folder and update pathname in `index.js`
 `touch App.jsx` in `app`
 
 ### (1) Images via React - part 1 - configs (`webpack.config.js`)
-Command line: (may take a moment)
 ```
 npm i image-webpack-loader file-loader --save-dev
 ```
@@ -290,14 +292,16 @@ npm i image-webpack-loader file-loader --save-dev
 ```
 within module.rules...
 ...
-
+```
+```
 //(a) jsx loader
 {
   test: /\.jsx$/,
   exclude: /node_modules/,
   loader: 'babel-loader'
 },
-
+```
+```
 //(b) image loader
 {
   test: /\.(jpe?g|png|gif|svg)$/i,
@@ -325,7 +329,6 @@ within module.rules...
 ```
 
 ### (2) Images via React - part 2 - hook up Babel
-Command line:
 ```
 npm i react react-dom babel-preset-react --save-dev
 ```
@@ -379,7 +382,6 @@ resolve: {
 ```
 
 - Hot-module-reloading `styles` loader:
-Command line:
 ```
 npm i css-hot-loader -D
 ```
@@ -400,7 +402,7 @@ npm i css-hot-loader -D
 ```
 
 - `postcss`:
-(a) Dependencies via command line:
+(a) Dependencies:
 ```
 npm i -D autoprefixer postcss-loader
 ```
@@ -431,8 +433,6 @@ module.exports = {
 
 
 # <a href=https://hackernoon.com/webpack-dashboard-with-create-react-app-vue-cli-and-custom-configs-49166e1a69de>VI.</a>
-
-Command line:
 ```
 npm install webpack-dashboard --save-dev
 ```
