@@ -39,12 +39,27 @@ npm i --save-dev webpack@latest webpack-dev-server@latest
 ```
 "We are installing Webpack and Webpack development server. We need a HTTP client to serve our files, that’s why we’re installing the dev-server."
 
-### (4)Configs via `webpack.config.js`
+### (4)`webpack.config.js` boilerplate
+```
+const webpack = require('webpack');
+
+let config = {
+  entry: './index.js',
+  output: {
+    filename: 'output.js'
+  }
+}
+
+module.exports = config;
+```
 - Atom: `req` shortcut for require statements
 - re: `entry` & `output`: "Basic workflow goes like this: We write code, webpack reads it, compiles it, spits out a compiled version out for the browser."
 - export to the outside world via `exports` statemt
 
-### (5)`src` the webpack `output` file in `index.html`
+### (5)"Source" the webpack `output.js` file in `index.html`
+```
+<script src="output.js"></script>
+```
 "Every web file has at least one single .html file. This is where the browser starts working with us." Enclose webpack output in `<script>`s.
 
 ### (6)Install webpack globally for manual testing
