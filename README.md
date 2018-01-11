@@ -18,8 +18,8 @@ webpack-dashboard
 # To build: abbreviated annotations of Indrek Lasn's series
 (I-VI)
 
-# I.
-## see: https://codeburst.io/easy-guide-for-webpack-2-0-from-scratch-fe508a3ce44e
+# <a href=https://codeburst.io/easy-guide-for-webpack-2-0-from-scratch-fe508a3ce44e>I.</a>
+
 
 ### (1)Init the project
 Command line:
@@ -63,8 +63,7 @@ webpack
 
 
 
-# II.
-## see: https://codeburst.io/simple-beginner-guide-for-webpack-2-0-from-scratch-part-ii-66beb5dbccc2
+# <a href=https://codeburst.io/simple-beginner-guide-for-webpack-2-0-from-scratch-part-ii-66beb5dbccc2>II.</a>
 
 ### (1) Command-line watch webpack (`webpack --watch`, `npm run watch`)
 Just command-line it: `webpack --watch`
@@ -101,8 +100,7 @@ Add new rule to `webpack.config.js` loader for `/\.scss$/` files.
 Test out by creating and populating a new `styles.scss` file (e.g. change the `background-color` to a `$variable`), and requiring `styles.scss` in `index.js`.
 
 
-# III.
-## see: https://codeburst.io/simple-beginner-guide-for-webpack-2-0-from-scratch-part-iii-d374c021f9fc
+# <a href=https://codeburst.io/simple-beginner-guide-for-webpack-2-0-from-scratch-part-iii-d374c021f9fc>III.</a>
 
 ### (0) "Cleaning up time!"
 ```
@@ -191,8 +189,7 @@ WOW. The result here is very cool.
 #### `npm run start`
 
 
-# IV.
-## see: https://codeburst.io/simple-beginner-guide-for-webpack-2-0-from-scratch-part-iv-102efc01ffad
+# <a href=https://codeburst.io/simple-beginner-guide-for-webpack-2-0-from-scratch-part-iv-102efc01ffad>IV.</a>
 "We have all of the main functionality already — but we want more, we’re going to boost up our performance and make our build production ready."
 
 ### (1) JS Minification - via `uglifyjs` webpack plugin
@@ -274,8 +271,7 @@ if (process.env.NODE_ENV === 'production') {
 ```
 
 
-# V.
-## see: https://codeburst.io/simple-beginner-guide-for-webpack-2-0-from-scratch-part-v-495dba627718
+# <a href=https://codeburst.io/simple-beginner-guide-for-webpack-2-0-from-scratch-part-v-495dba627718>V.</a>
 
 ### (0) Get organized
 (a) create `assets` folder w/in `src`
@@ -434,8 +430,8 @@ module.exports = {
 `npm run start` to test. (Try flex display or something in `styles.scss`.)
 
 
-# VI.
-## see: https://hackernoon.com/webpack-dashboard-with-create-react-app-vue-cli-and-custom-configs-49166e1a69de
+# <a href=https://hackernoon.com/webpack-dashboard-with-create-react-app-vue-cli-and-custom-configs-49166e1a69de>VI.</a>
+
 Command line:
 ```
 npm install webpack-dashboard --save-dev
