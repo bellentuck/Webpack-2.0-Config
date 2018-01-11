@@ -24,22 +24,14 @@ webpack-dashboard
 ### (1)Init the project
 ```
 node -v
-```
-```
 mkdir webpack-2.0-from-scratch
-```
-```
 cd webpack-2.0-from-scratch/
-```
-```
 npm init -y
-```
-```
 touch index.hmtl webpack.config.js index.js README.md
 ```
 
 ### (2) `index.html` boilerplate
-If you're using Atom the `html` shortcut is great
+If you're using Atom the `html` shortcut is great.
 
 ### (3)Install webpack
 ```
