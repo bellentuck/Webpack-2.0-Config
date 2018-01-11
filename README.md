@@ -15,8 +15,8 @@ autoprefixer postcss-loader
 webpack-dashboard
 ```
 
-# To build: abbreviated annotations of Indrek Lasn's series
-(Quotes if not otherwise attributed are attributable to Lasn)
+# To build:
+Instructions, <i>viz.</i>, abbreviated annotations of <a href=https://codeburst.io/easy-guide-for-webpack-2-0-from-scratch-fe508a3ce44e>Indrek Lasn's "easy guide for webpack 2.0 from scratch"</a>; quotes if not otherwise attributed are attributable to Lasn
 
 # <a href=https://codeburst.io/easy-guide-for-webpack-2-0-from-scratch-fe508a3ce44e>I.</a>
 
