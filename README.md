@@ -16,7 +16,7 @@ webpack-dashboard
 ```
 
 # To build: abbreviated annotations of Indrek Lasn's series
-(I-VI)
+(Quotes if not otherwise attributed are attributable to Lasn)
 
 # <a href=https://codeburst.io/easy-guide-for-webpack-2-0-from-scratch-fe508a3ce44e>I.</a>
 
@@ -60,7 +60,7 @@ module.exports = config;
 ```
 <script src="output.js"></script>
 ```
-"Every web file has at least one single .html file. This is where the browser starts working with us." Enclose webpack output in `<script>`s.
+"This is where the browser starts working with us."
 
 ### (6)Install webpack globally for manual testing
 ```
