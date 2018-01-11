@@ -68,6 +68,7 @@ npm i -g webpack@latest
 ```
 
 ### (7)Run webpack!
+Command line:
 ```
 webpack
 ```
@@ -81,31 +82,33 @@ Just command-line it: `webpack --watch`
 and/or:
 a) add to `package.json`:   `"scripts": {
     "watch": "webpack --watch",`
-b) Commande line: `npm run watch`
+b) Command line: `npm run watch`
 
 ### (2) Compile ES6 to ES5 via Babel
 ```
 npm install --save-dev babel-loader babel-core
 ```
-"Loaders allow you to preprocess files as you `require()` or 'load' them."
-Add first loader rule to `webpack.config.js`. (Init `module`, `rules`; write test for `/\.js$/` files)
-Test via `index.js` (throw on some sugar)
+##### "Loaders allow you to preprocess files as you `require()` or 'load' them."
+- Add first loader rule to `webpack.config.js`. (Init `module`, `rules`; write test for `/\.js$/` files)
+- Test via `index.js` (throw on some sugar)
 
 ### (3) Install Babel presets
 ```
 npm install --save-dev babel-preset-es2015
 ```
 Config `.babelrc`:
-`{ "presets": ["es2015"] }`
-Test via `index.js` (e.g. write a class)
+```
+{ "presets": ["es2015"] }
+```
+- Test via `index.js` (e.g. write a class)
 
 ### (4) Compile styles (SCSS -> CSS)
 ```
 npm i --save-dev sass-loader node-sass css-loader style-loader
 ```
-Then, add new rule to `webpack.config.js` loader for `/\.scss$/` files.
+- Then, add new rule to `webpack.config.js` loader for `/\.scss$/` files.
 
-Test out by creating and populating a new `styles.scss` file (e.g. change the `background-color` to a `$variable`), and requiring `styles.scss` in `index.js`.
+- Test out by creating and populating a new `styles.scss` file (e.g. change the `background-color` to a `$variable`), and requiring `styles.scss` in `index.js`.
 
 
 # <a href=https://codeburst.io/simple-beginner-guide-for-webpack-2-0-from-scratch-part-iii-d374c021f9fc>III.</a>
@@ -118,7 +121,7 @@ mv index.js styles.scss
 mkdir public
 mv index.html output.js
 ```
-Then update `webpack.config.js` paths.
+Then update `webpack.config.js` paths:
 ```
 req path
 let config = {
@@ -161,13 +164,16 @@ plugins: [
 ```
 "And we should end up with `styles.css` generated in our `public` directory."
 
-`index.html`: add `<link rel="stylesheet" href="styles.css">` (webpack stylesheet output)
+`index.html`: add webpack stylesheet output
+```
+<link rel="stylesheet" href="styles.css">
+```
 
 ### (2) Set up local development server
 ```
 npm install webpack-dev-server -g --save-dev
 ```
-(as of 1/9/18, need to do global install to get `webpack-dev-server` commands)
+(as of 1/10/18, need to do global install to get `webpack-dev-server` commands)
 
 Add `devServer {}` object to `webpack.config.js`:
 ```
@@ -284,12 +290,14 @@ if (process.env.NODE_ENV === 'production') {
 # <a href=https://codeburst.io/simple-beginner-guide-for-webpack-2-0-from-scratch-part-v-495dba627718>V.</a>
 
 ### (0) Get organized
-(a) create `assets` folder w/in `src`
-`mkdir stylesheets, icons, images, fonts` within
-Move `styles.scss` into `stylesheets` folder and update pathname in `index.js`
+(a)
+- create `assets` folder w/in `src`
+- `mkdir stylesheets, icons, images, fonts` within
+- Move `styles.scss` into `stylesheets` folder and update pathname in `index.js`
 
-(b) create `app` folder w/in `src`
-`touch App.jsx` in `app`
+(b)
+- create `app` folder w/in `src`
+- `touch App.jsx` in `app`
 
 ### (1) Images via React - part 1 - configs (`webpack.config.js`)
 ```
@@ -375,7 +383,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 - If get intimidating webpack error regarding img loading (to effect of "image not found"), try: `brew reinstall libpng` (https://github.com/tcoopman/image-webpack-loader/issues/60)
 
-To deal with "long import files" in `App.jsx` - e.g., `import satire from '../assets/images/koachbros.jpeg';`, use *aliases* in `webpack.config.js` by adding a `resolve` object (to the top-level `config` object):
+- To deal with "long import files" in `App.jsx` - e.g., `import satire from '../assets/images/koachbros.jpeg';` - use *aliases* in `webpack.config.js`. Do this by adding a `resolve` object to the top-level `config` object:
 ```
 resolve: {
   // auto-resolve certain extensions:
@@ -388,11 +396,10 @@ resolve: {
 },
 ```
 
-- Hot-module-reloading `styles` loader:
+- Hot-module-reloading `styles` loader (`-D` = `--save-dev`):
 ```
 npm i css-hot-loader -D
 ```
-(`-D === --save-dev`)
 
 `webpack.config.js`:
 ```
@@ -409,6 +416,9 @@ npm i css-hot-loader -D
 ```
 
 - `postcss`:
+```
+p o s t c s s
+```
 (a) Dependencies:
 ```
 npm i -D autoprefixer postcss-loader
