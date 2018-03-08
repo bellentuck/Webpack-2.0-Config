@@ -34,5 +34,8 @@
     "webpack": "^3.10.0",
     "webpack-dashboard": "^1.0.2",
     "webpack-dev-server": "^2.10.1"
+  },
+  "dependencies": {
+    "ssri": "^5.2.4"
   }
 }
